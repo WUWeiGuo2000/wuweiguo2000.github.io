@@ -10,15 +10,15 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="8月记录">
+  <meta name="description" content="8月工作记录（按周总结）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="8月工作记录">
 <meta property="og:url" content="https://wuweiguo2000.github.io/2022/08/18/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%9509/index.html">
 <meta property="og:site_name" content="卫国的小站">
-<meta property="og:description" content="8月记录">
+<meta property="og:description" content="8月工作记录（按周总结）">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-08-18T14:50:37.000Z">
-<meta property="article:modified_time" content="2022-09-01T03:00:03.257Z">
+<meta property="article:modified_time" content="2022-09-01T08:15:24.508Z">
 <meta property="article:author" content="WeiGuo WU">
 <meta property="article:tag" content="工作">
 <meta name="twitter:card" content="summary">
@@ -259,7 +259,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">938字</span>
+      <span class="post-count">944字</span>
     </span>
   </span>
 
@@ -279,7 +279,7 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p><font color=black size=5>8月记录</font></p>
+    <p> <font face="fantasy" color="#5EB7B7" size=5>8月工作记录（按周总结）</font></p>
 <span id="more"></span>
 <h4 id="周记一"><a href="#周记一" class="headerlink" title="周记一"></a>周记一</h4><p>这周休息，第一天我要去公司值班协助相关老师完成园区核酸检测，下午自行学习，上周六在笔记本中用虚拟机装了个ubuntu16.04系统，在b站找了一些相关视频进行了简单的学习，在windows和ubuntu系统传输文件上遇到了问题，各种百度，还是无法成功。后面便去学习米尔电子的那块zynq开发板去了，找到淘宝店要到相关资料链接后进行学习，感觉这个更难，大致看了下所提供的资料，zynq7000系列其实就是ARM+FPGA架构，有很多种启动方式，于是这几天就在住的地方搭建相关linux系统下的编译环境。发现米尔电子开发板给的资料并不详细，于是又去b站搜集相关资料，打算套用正点原子的视频+资料来进行学习，更加容易学习。在家顺带做了几天饭，但是学习的效率太低就晚上或者白天偶尔来公司进行学习。陆陆续续假就结束了。</p>
 <h4 id="周记二"><a href="#周记二" class="headerlink" title="周记二"></a>周记二</h4><p>  本周周一至周三在嘉定这边进行自我学习，根据光电所项目所需电源需求，设计另外一款开关电源板为之前的线性稳压电源板（LDO）做另外一手准备。在TI官网用电源芯片工具输入各项条件进行筛选后，在能买到、功能能完成、价格便宜的前提选择了IMR14030芯片，后来在网上了解到国产厂商芯洲科技在TI做这类芯片后进行了仿制+改进，做到了同步降压，效率更高，引脚分布也一样。于是改用SCT2432芯片完成开关电源板。大致参数如下：输入28V 、输出24V、工作电流1A左右。按芯片手册建议绘制原理图以及Layout。同时计算电阻、电容、电感的大小。在立创商城购买元器件。打板焊接后进行空载测试，由于输出端用的是高精度电阻，输出电压很准确。用示波器进行电压纹波测试发现问题，当输入电压低于28.5V时输出纹波较大，27V时甚至有一两百mV，输入电压高于28.6V-32V时表现较好，空载纹波10mV左右。但是实际使用时输入电压为28V仍不符合需求，又回过头去看技术手册以及网上查阅资料，未取得较明显发现。技术手册有说到当占空比较大时（24V/28V接近85.7%了，下管mos会强制开启给自举电容充电），于是我铁憨憨先拿万用表在低压差条件下测试自举电容两端电压，有看到电压较大变化当然测试过程中有听到哒哒哒的不是很大的声音，结果没多久芯片附近就冒烟了，并且发现输入以及输出端短路了，我又拿了另外一块焊好的电源板做同样测试，结果也被烧掉了，但这次没冒烟，怀疑是其它的电阻电容短路了，于是一个一个测试并拿下来最后估计应该也是芯片被烧坏了。后面又去系统学习了ADI公司的电源公开课，并进行该版的第二版打板。周四周五在虹口园区在刘鹏老师和茅姐的帮助下绘制项目接线图，给项目调试版接好相关调试线，线性电源板供电，上电目前正常。</p>
@@ -542,15 +542,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工作</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">就业</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">生活</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工作</a>
               </li>
              
               <li class="article-tag-list-item">
