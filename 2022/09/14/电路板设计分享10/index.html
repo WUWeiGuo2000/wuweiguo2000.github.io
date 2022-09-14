@@ -6,18 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://wuweiguo2000.github.io">
-  <title>🐈随 笔 | 卫国的小站</title>
+  <title>电路板设计分享 | 卫国的小站</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="🐈随 笔">
-<meta property="og:url" content="https://wuweiguo2000.github.io/essay/index.html">
+  <meta name="description" content="前言：结合最近在工作过程中的知识输入，我想输出一些关于pcb制作的分享。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="电路板设计分享">
+<meta property="og:url" content="https://wuweiguo2000.github.io/2022/09/14/%E7%94%B5%E8%B7%AF%E6%9D%BF%E8%AE%BE%E8%AE%A1%E5%88%86%E4%BA%AB10/index.html">
 <meta property="og:site_name" content="卫国的小站">
+<meta property="og:description" content="前言：结合最近在工作过程中的知识输入，我想输出一些关于pcb制作的分享。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-09-01T07:23:38.000Z">
-<meta property="article:modified_time" content="2022-09-01T07:27:48.033Z">
+<meta property="article:published_time" content="2022-09-14T14:59:01.000Z">
+<meta property="article:modified_time" content="2022-09-14T13:58:20.430Z">
 <meta property="article:author" content="WeiGuo WU">
+<meta property="article:tag" content="硬件设计">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="卫国的小站" type="application/atom+xml">
@@ -223,14 +226,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="essay-" class="article article-type-essay " itemscope itemprop="blogPost">
+            <article id="post-电路板设计分享10" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      🐈随 笔
+      电路板设计分享
     </h1>
   
 
@@ -242,8 +245,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/essay/index.html" class="archive-article-date">
-        <time datetime="2022-09-01T07:23:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-01</time>
+<a href="/2022/09/14/%E7%94%B5%E8%B7%AF%E6%9D%BF%E8%AE%BE%E8%AE%A1%E5%88%86%E4%BA%AB10/" class="archive-article-date">
+        <time datetime="2022-09-14T14:59:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-14</time>
 </a>
 
   
@@ -256,7 +259,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">0字</span>
+      <span class="post-count">2k字</span>
     </span>
   </span>
 
@@ -265,7 +268,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">6分</span>
     </span>
   </span>
 </div>
@@ -276,7 +279,27 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    
+    <p><font face="fantasy" color="#5EB7B7" size=5>前言：结合最近在工作过程中的知识输入，我想输出一些关于pcb制作的分享。</font></p>
+<span id="more"></span>
+
+
+<p>pcb制作过程从流程上大致分为两部分：绘制原理图、绘制PCB</p>
+<p>绘制原理图的目的是为了告诉EDA软件我有哪些元器件，这些元器件的哪个引脚对应连接点是谁。专业术语叫生成网络网表。在绘制电路原理图的过程中我们要根据我们的设计对象的功能需求进行关键器件的选型和电路设计，分析哪些功能实现部分要用到新技术所以要特别注意，最好提前做好仿真或功能打样测试。<br>在实际绘制原理图过程中，会存在部分元器件在绘制软件中找不到元器件符号图，需要自行绘制或者在网上找到相关资源下载下来导入到软件库中进行来使用。</p>
+<p>这里推荐目前使用过的三款EDA软件<br>Altiun Designer 2022或2009版本<br>立创EDA  最新版即可（专业版或普通版）<br>Kicad 最新版本即可  稳定版</p>
+<p>AD软件可以在淘宝或者网上找到丰富的元器件库<br>立创EDA自带元器件库，并且可以直接在立创商城下单该器件同时还提供芯片手册<br>Kicad的库较全，如果找不到的话网上一般也会有，目前也有可以直接从立创EDA中导出需要的器件符号图和封装的插件<br>这里提供平时经常用的几个元器件库，支持多个软件格式的导出！</p>
+<p>在绘制原理图过程中尽量不要让线交叉同时对于去耦或者滤波电容应用线连接方便表示他应该靠近那个器件的位置，按照电路功能分模块绘制，对于电源部分或者大电流回路部分应进行文字标志，说明该线路可能流过电流大小已及其他特殊引脚在使用过程中需要注意的地方，如果有芯片手册补充内容说明的最好附上具体位置。</p>
+<p>当绘制完所有原理图后，核对检查无误并且EDA软件也无明显错误后则可进行元器件封装关联，对于所用的常规器件如电阻电容磁珠等尽量用贴片统一规格如0603、0805封装等，对于芯片的封装类型可以查阅芯片手册后知晓再去软件中找到核对引脚以及规格后使用，对于软件中找不到的也可以在下列网站中获取或者根据芯片手册提供的内容自己绘制。<br>如果要想自己画的板子在3D视角下有立体感好看的话还需要匹配对应器件3D的封装。</p>
+<p>当上述工作完成后电路原理图的绘制基本算完成了。还有一种画法是当主控芯片所用引脚过多时先绘制好大部分的电路图，空出主控芯片与外部接口部分，同时关联器件的封装。在PCB绘制过程中以如何连线方便不会反复交叉为原则先连线再去原理图中标注引脚的对应关系。</p>
+<h5 id="绘制PCB部分"><a href="#绘制PCB部分" class="headerlink" title="绘制PCB部分"></a>绘制PCB部分</h5><p>PCB绘制主要可分为：绘制板框、元件布局、引脚布线、敷铜、DRC检测</p>
+<h6 id="绘制板框"><a href="#绘制板框" class="headerlink" title="绘制板框"></a>绘制板框</h6><p>主要根据设计对象的机械结构和外壳所要求的形状而进行设计，一般可由结构设计师提供电路板的外形图文件，外框又分为规则图形和非规则图形。该图形由外框层属性线构成，制板厂根据外框层对板框进行加工。手绘规则图形一般采用坐标点来完成，因为板框矩形的四个角为了避免割手会进行倒圆角，采用坐标点设置能做到定位精确。</p>
+<h6 id="元件布局"><a href="#元件布局" class="headerlink" title="元件布局"></a>元件布局</h6><p>是PCB绘制的重中之重，首先要根据板框外形摆放好外部接口器件，因为外部接口器件位置往往是之前就限定好了的，之后应该根据原理图分模块把各模块器件区分开来然后通过旋转调整角度以确保整个模块各器件连线交叉少，信号流通顺畅，从入口到出口有来有回。同时对于新使用的器件模块要通读芯片手册，确保该器件布局遵守芯片手册要求，无冲突。对于板框面积有限而器件较多的情况可以在底层放置器件，但同时要考虑到底层器件高度与外壳三维有无冲突，电源部分要考虑到各模块需要的电压值来放置在合理的位置。待各模块调整好大致布局后再将其一一放置在板框内合适的位置。</p>
+<h6 id="布线操作"><a href="#布线操作" class="headerlink" title="布线操作"></a>布线操作</h6><p>布线前对于较复杂电路板可以设置多层如4、6、8、10层等，其中制板成本也会随板层增加而大幅提高。同时需要对板层进行合理规划，电源层，信号层，电源层还可以在某一层进行区域分割，信号层之间最后隔一层电源层用于屏蔽信号层之间的干扰。常见的板层规划如下</p>
+<p>同时对于线宽而言需要参考下原理图那些线会走大电流然后完成线宽分类用来在规则里面对线宽进行约束，针对某一类网络名采用某种线宽。同时依据线宽类型设置相应钻孔大小，当走线需要通过转孔到其它层才能导通时使用。在连线的同时对布局进一步优化，做到信号尽可能短，保证敏感信号尽可能远离噪声源，对于功率器件部分可以进行开窗或者敷铜来实现。数据差分信号等距等长以抑制共模噪声。线宽和电流还有铜厚关系参考如下</p>
+<h6 id="敷铜"><a href="#敷铜" class="headerlink" title="敷铜"></a>敷铜</h6><p>主要体现在各电源层和上下顶层，如上较复杂的电源层敷铜需要根据板子的实际电源分布来进行区域分割，各区域之间要保持合理间距，同时底层与顶层敷铜要注意对于引脚较密的部分要设置禁止敷铜区，同时考虑到器件焊接的可操作性对于散热无较强要求的元器件接地尽量用线来连接，以保证加热过程中热量不会通过大面积铜皮快速散失，或者设置铜皮与器件连接类型成十字型。敷铜结束后要去除相关死铜即没有与任何网络相连的铜皮。</p>
+<p>为了焊接元器件以及调试电路板方便，需要将元器件的位号和外部接口的引脚标识丝印调整和补充完整做到美观方正，不具有迷惑性。</p>
+<h6 id="DRC检测"><a href="#DRC检测" class="headerlink" title="DRC检测"></a>DRC检测</h6><p> 对于DRC检测是根据EDA软件的相关规则约束条件与实际板子的状况进行比对，如果有不符合约束条件的就会进行报错一般常见的是间距类或者线宽类。所以需要熟悉制板厂生产加工时能做到的工艺水平，如最小线宽，线与线之间的间距，板框与线的最小间距，最小通孔等数据。根据报错修改好或者对于不重要的报错放宽约束规则或者无视它。</p>
+<p>最后就是生成输出文件给制板厂了，如制板所需的gerble文件，焊接元器件需要的电装文件包括元器件的装配图，元器件型号及数量和相关焊接工艺要求等。</p>
+
     
 
     
@@ -317,7 +340,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://wuweiguo2000.github.io/essay/index.html" title="🐈随 笔" target="_blank">https://wuweiguo2000.github.io/essay/index.html</a>
+          <a href="https://wuweiguo2000.github.io/2022/09/14/电路板设计分享10/" title="电路板设计分享" target="_blank">https://wuweiguo2000.github.io/2022/09/14/电路板设计分享10/</a>
         </li>
         
         <li>
@@ -334,6 +357,17 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">硬件设计</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
 
     
@@ -344,6 +378,16 @@
   </div>
 </article>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2022/08/18/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%9509/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">8月工作记录</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
 <aside class="wrap-side-operation">
@@ -366,7 +410,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%98%E5%88%B6PCB%E9%83%A8%E5%88%86"><span class="toc-number">1.</span> <span class="toc-text">绘制PCB部分</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%BB%98%E5%88%B6%E6%9D%BF%E6%A1%86"><span class="toc-number">1.1.</span> <span class="toc-text">绘制板框</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%85%83%E4%BB%B6%E5%B8%83%E5%B1%80"><span class="toc-number">1.2.</span> <span class="toc-text">元件布局</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%B8%83%E7%BA%BF%E6%93%8D%E4%BD%9C"><span class="toc-number">1.3.</span> <span class="toc-text">布线操作</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%95%B7%E9%93%9C"><span class="toc-number">1.4.</span> <span class="toc-text">敷铜</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#DRC%E6%A3%80%E6%B5%8B"><span class="toc-number">1.5.</span> <span class="toc-text">DRC检测</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -426,7 +470,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
